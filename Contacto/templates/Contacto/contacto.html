@@ -1,0 +1,18 @@
+{% extends "ProyectoConstrucciones/base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+    {% if "valido" in request.GET %}
+        <p style="color:white;margin:20px auto">Informacion enviada correctamente</p>
+    {% endif %}
+    <form action="" method="post" style="text-align: center;background-color: rgba(24, 64, 8);width:40%;margin:20px auto;padding:2px 0px;border-radius:10px">
+        {% csrf_token %}
+        <div ><table style="color:white;margin:20px auto;width:40%;border-radius:5px;padding:1px 0px">{{form.as_table}}</table></div>
+        <input type="submit" value="Enviar" width="150%">
+    </form>
+    
+{% endblock %}
